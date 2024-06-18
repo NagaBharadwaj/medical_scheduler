@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <a href="{{ url_for('appointment') }}">Schedule Appointment</a>
+    <a href="{{ url_for('patient') }}">Add Patient</a>
+    <h2>Appointments</h2>
+    <ul>
+        {% for appointment in appointments %}
+            <li>{{ appointment.patient.name }} - {{ appointment.date }} at {{ appointment.time }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Logout</a>
+</body>
+</html>

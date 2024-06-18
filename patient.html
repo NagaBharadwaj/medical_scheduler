@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Add Patient</title>
+</head>
+<body>
+    <h1>Add Patient</h1>
+    <form method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+        <label for="age">Age:</label>
+        <input type="number" name="age" required>
+        <label for="contact">Contact:</label>
+        <input type="text" name="contact" required>
+        <button type="submit">Add</button>
+    </form>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>
